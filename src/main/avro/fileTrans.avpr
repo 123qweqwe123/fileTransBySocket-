@@ -1,0 +1,28 @@
+{"namespace": "com.bdcor.datserver.filetrans.avro.proto",
+ "protocol": "datFileTrans",
+
+ "types": [
+     {	"name": "FileData", 
+     	"type": "record",
+      "fields": [
+          {"name": "paramsMap",   "type": {"type": "map", "values": "string"}},
+		  {"name": "fileBytes",   "type": "bytes"}
+      ]
+     },
+     {	"name": "HandleResult", 
+     	"type": "record",
+      "fields": [
+          {"name": "resultType",   "type": "string"},
+		  {"name": "resultStr",   "type": "string"}
+      ]
+     
+	 }
+ ],
+
+ "messages": {
+     "convert": {
+         "request": [{"name": "fileData", "type": "FileData"}],
+         "response": "HandleResult"
+     }
+ }
+}
